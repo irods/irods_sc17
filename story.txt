@@ -1,0 +1,24 @@
+python storytelling.py --data_object "science.txt"
+
+
+Alice issues the command iput -R scienceResc science.txt
+Alice then grants Bobby write access to science.txt. To do that Alice needs to first give access to her home directory
+and then to the file in the directory. She issues the following commands
+ ichmod write bobby /tempZone/home/alice
+ ichmod write bobby science.txt
+
+Bobby now has access to Alice's file and can do some science on it.
+Bobby accesses the file by typing iget /tempZone/home/alice/science.txt
+
+In the meantime Alice decides that she needs to add some metadata to the file
+imeta -d science.txt doc_type some_science
+
+
+To view the policy enforcement points that each action executes run the storytelling.py script
+It shows the results that are indexed in elasticsearch
+
+iput corresponds to audit_pep_api_obj_stat_pre, audit_pep_api_data_obj_put_pre
+ichmod corresponds to audit_pep_api_mod_access_control_pre
+iget corresponds to audit_pep_api_obj_stat_pre, audit_pep_api_data_obj_get_pre
+imeta corresponds to audit_pep_api_mod_avu_metadata_pre
+
