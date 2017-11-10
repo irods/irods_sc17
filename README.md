@@ -12,6 +12,9 @@
 
 ### iRODS Rule and Metadata-Driven Storage Tiering
 
+README:
+  https://github.com/irods/irods_training/tree/master/advanced/storage_tiering
+
 Build the resource hierarchy:
 ```
 iadmin mkresc ufs0 unixfilesystem `hostname`:/tmp/irods/ufs0
