@@ -30,6 +30,7 @@ def run_elasticsearch(data_object):
           res = es.search(index = "irods_audit", body=request_body)
           found = None
           for counter, hits in enumerate(res["hits"]["hits"]):
+#              print(json.dumps(hits["_source"], sort_keys=True, indent=4, separators=(',',':')))
               for key, value in hits["_source"].iteritems():
                    if found is not None:
                        break

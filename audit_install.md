@@ -2,9 +2,15 @@ To Set the Demo machine iRODS and audit plugin was installed. RabbitMQ, Elastic 
 
 Ubuntu 16.04 LTS
 
+Amazon   ssh -i training.pem ubuntu@34.230.40.77
+
+vSphere 172.25.14.81
+
+
 Prepare and clone this workshop repository:
 ```
-sudo apt-get -y install git python-pip moreutils
+sudo apt-get update
+sudo apt-get -y install git python-pip moreutils jq
 git clone https://github.com/trel/sc17
 ```
 
@@ -26,6 +32,7 @@ sudo apt-get -y install irods-rule-engine-plugin-audit-amqp
 sudo cat /etc/irods/server_config.json | jq '.plugin_configuration.rule_engines += [{"instance_name": "irods_rule_engine_plugin-audit_amqp-instance","plugin_name": "irods_rule_engine_plugin-audit_amqp","plugin_specific_configuration" : {"amqp_location" : "ANONYMOUS@localhost:5672","amqp_options" : "","amqp_topic" : "audit_messages","pep_regex_to_match" : "audit_.*"}}]' | sudo sponge /etc/irods/server_config.json
 sudo cat /etc/irods/server_config.json | jq '.rule_engine_namespaces += ["audit_"]' | sudo sponge /etc/irods/server_config.json
 sudo chown irods:irods /etc/irods/server_config.json
+sudo service irods restart
 ```
 
 Install RabbitMQ:
