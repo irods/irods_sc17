@@ -1,8 +1,9 @@
 from __future__ import print_function
 
+import json
 import optparse
 import pprint
-import json
+import sys
 from elasticsearch import Elasticsearch
 
 def run_elasticsearch(data_object):
@@ -39,16 +40,14 @@ def run_elasticsearch(data_object):
                   print(json.dumps(hits["_source"], sort_keys=True, indent=4, separators=(',',':')))
                   found = None
 
-def print_usage():
-    print("bam")
-
 def main():
     parser = optparse.OptionParser()
-    parser.add_option('--data_object')
+    parser.add_option('-d', action='store', type='string', dest='data_object', help='logical path of data object to audit')
     (options, args) = parser.parse_args()
-    if len(args) != 1:
-        parser.error('incorrect number of arguments')
-    if len(args) == 0:
-        parser.print_usage()
+    if options.data_object is None or len(args) != 0:
+        parser.error('-d data_object is required')
         return 1
     run_elasticsearch(options.data_object)
+
+if __name__ == '__main__':
+    sys.exit(main())
