@@ -3,9 +3,9 @@ To Set the Demo machine iRODS and audit plugin was installed. RabbitMQ, Elastic 
 To Install RabbitMQ on UB16 run the following commands on the terminal
 1.)	curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.deb.sh | sudo bash
 2.)	curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.deb.sh | sudo bash
-3.)	sudo apt-get update –y
-4.)	sudo apt-get install erlang –y
-5.)	sudo apt-get install rabbitmq-server –y
+3.)	sudo apt-get update
+4.)	sudo apt-get -y install erlang
+5.)	sudo apt-get -y install rabbitmq-server
 6.)	sudo rabbitmq-plugins enable rabbitmq_amqp1_0
 7.)	sudo service rabbitmq-server start
 
