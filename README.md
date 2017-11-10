@@ -96,6 +96,26 @@ Configure the middle tier query to detect policy violations:
 imeta set -R rnd1 irods::storage_tier_query "select META_DATA_ATTR_VALUE, DATA_NAME, COLL_NAME where RESC_NAME = 'ufs2' || = 'ufs3' and META_DATA_ATTR_NAME = 'irods::access_time' and META_DATA_ATTR_VALUE < 'TIME_CHECK_STRING'"
 ```
 
+Teardown:
+```
+iadmin rmchildfromresc rnd0 ufs0
+iadmin rmchildfromresc rnd0 ufs1
+iadmin rmchildfromresc rnd1 ufs2
+iadmin rmchildfromresc rnd1 ufs3
+iadmin rmchildfromresc rnd2 ufs4
+iadmin rmchildfromresc rnd2 ufs5
+iadmin rmresc rnd0
+iadmin rmresc rnd1
+iadmin rmresc rnd2
+iadmin rmresc ufs0
+iadmin rmresc ufs1
+iadmin rmresc ufs2
+iadmin rmresc ufs3
+iadmin rmresc ufs4
+iadmin rmresc ufs5
+iadmin rum
+```
+
 ### iRODS Audit (AMQP) Rule Engine Plugin
 
 [Demo](audit_install.md)
