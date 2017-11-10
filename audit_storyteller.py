@@ -22,7 +22,7 @@ def run_elasticsearch(data_object):
                                   "regexp": {"rule_name": "audit_pep_api_auth_.*_pre"}
                                }
                              }
-                           }    
+                           }
                          }
 
            # sanity check
@@ -39,9 +39,16 @@ def run_elasticsearch(data_object):
                   print(json.dumps(hits["_source"], sort_keys=True, indent=4, separators=(',',':')))
                   found = None
 
+def print_usage():
+    print("bam")
 
 def main():
     parser = optparse.OptionParser()
     parser.add_option('--data_object')
-    options, _ = parser.parse_args()
+    (options, args) = parser.parse_args()
+    if len(args) != 1:
+        parser.error('incorrect number of arguments')
+    if len(args) == 0:
+        parser.print_usage()
+        return 1
     run_elasticsearch(options.data_object)
