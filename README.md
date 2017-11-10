@@ -62,3 +62,4 @@ imeta set -R rnd1 irods::storage_tier_query "select META_DATA_ATTR_VALUE, DATA_N
 
 ### iRODS Audit (AMQP) Rule Engine Plugin
 
+[Demo](audit_install.md)
