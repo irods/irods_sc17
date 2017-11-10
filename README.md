@@ -8,8 +8,6 @@
 
 ### Python Ingest Tool
 
-### iRODS Audit (AMQP) Rule Engine Plugin
-
 ### iRODS Rule and Metadata-Driven Storage Tiering
 
 README:
@@ -61,3 +59,6 @@ Configure the middle tier query to detect policy violations:
 ```
 imeta set -R rnd1 irods::storage_tier_query "select META_DATA_ATTR_VALUE, DATA_NAME, COLL_NAME where RESC_NAME = 'ufs2' || = 'ufs3' and META_DATA_ATTR_NAME = 'irods::access_time' and META_DATA_ATTR_VALUE < 'TIME_CHECK_STRING'"
 ```
+
+### iRODS Audit (AMQP) Rule Engine Plugin
+
