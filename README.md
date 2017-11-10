@@ -12,7 +12,7 @@
 
 ### iRODS Rule and Metadata-Driven Storage Tiering
 
-Build and view the resource hierarchy:
+Build the resource hierarchy:
 ```
 iadmin mkresc ufs0 unixfilesystem `hostname`:/tmp/irods/ufs0
 iadmin mkresc ufs1 unixfilesystem `hostname`:/tmp/irods/ufs1
@@ -29,7 +29,20 @@ iadmin addchildtoresc rnd1 ufs2
 iadmin addchildtoresc rnd1 ufs3
 iadmin addchildtoresc rnd2 ufs4
 iadmin addchildtoresc rnd2 ufs5
-ilsresc
+```
+
+View the new resource hierarchy:
+```
+$ ilsresc
+rnd0:random
+├── ufs0:unixfilesystem
+└── ufs1:unixfilesystem
+rnd1:random
+├── ufs2:unixfilesystem
+└── ufs3:unixfilesystem
+rnd2:random
+├── ufs4:unixfilesystem
+└── ufs5:unixfilesystem
 ```
 
 Configure the tier group `example_group` and migration times with metadata:
