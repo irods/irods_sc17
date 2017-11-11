@@ -8,40 +8,32 @@
 
 ### Python Ingest Tool
 
+Two machines:
+
+```
+# iRODS 4.2.2 Server
 rods/rods
 172.25.14.119	icat.example.org icat
-
-
-
+```
+```
+# Redis Server
 172.25.14.120
 sudo su - irodsbuild
 source testenv3/bin/activate
+```
 
+Confirm the Redis service is running:
+```
 sudo service redis_6379 restart/status/start
+```
 
+Start the Redis Queue dashboard:
+```
 rq-dashboard 
+```
+View the dashboard at http://172.25.14.120:9181/
 
-http://172.25.14.120:9181/
-
-`irodsqueue ingest` is about 3x faster than `iput -r`
-
-pip freeze > requirements.txt
-arrow==0.10.0
-click==6.7
-Flask==0.12.2
-irodsqueue==0.1.0a0
-itsdangerous==0.24
-Jinja2==2.10
-MarkupSafe==1.0
-prettytable==0.7.2
-python-dateutil==2.6.1
-python-irodsclient==0.7.0a0
-redis==2.10.6
-rq==0.9.1
-rq-dashboard==0.3.10
-six==1.11.0
-Werkzeug==0.12.2
-xmlrunner==1.7.7
+`irodsqueue ingest` is 2-3x faster than `iput -r`
 
 
 ### iRODS Rule and Metadata-Driven Storage Tiering
