@@ -89,13 +89,13 @@ sudo cp sc17/audit/irods_audit.conf /etc/logstash/conf.d/irods_audit.conf
 sudo service logstash start
 ```
 
-Prepare to run `audit_storyteller.py`:
+Prepare to run `storyteller.py`:
 ```
 sudo -H pip install --upgrade pip
 sudo -H pip install elasticsearch
 ```
 
-Run `audit_storyteller.py`:
+Run `storyteller.py`:
 ```
 python sc17/audit/storyteller.py -d science.txt
 ```
