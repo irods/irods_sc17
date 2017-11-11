@@ -6,8 +6,8 @@
 
 ## Three Demonstrations
 
-### [Python Ingest Tool](ingest/)
+- [Python Ingest Tool](ingest/)
 
-### [iRODS Rule and Metadata-Driven Storage Tiering](tiering/)
+- [iRODS Rule and Metadata-Driven Storage Tiering](tiering/)
 
-### [iRODS Audit (AMQP) Rule Engine Plugin](audit/)
+- [iRODS Audit (AMQP) Rule Engine Plugin](audit/)
