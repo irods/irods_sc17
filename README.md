@@ -110,4 +110,4 @@ iadmin rum
 
 ### iRODS Audit (AMQP) Rule Engine Plugin
 
-[Demo](audit_install.md)
+[Demo](audit/README.md)
