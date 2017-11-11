@@ -1,4 +1,15 @@
 # SC17 iRODS Workshop
+# iRODS Solutions: Ingest, Tiering, and Audit
+
+https://irods.org/sc17/
+
+```
+Monday, November 13, 2017 
+8:30 - 11:00 a.m. MT 
+Embassy Suites Denver Downtown at the Convention Center 
+Crestone Ballroom 
+Denver, CO 80202
+```
 
 ## iRODS Consortium Update
 
