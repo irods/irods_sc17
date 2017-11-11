@@ -100,3 +100,19 @@ Run `audit_storyteller.py`:
 ```
 python sc17/audit_storyteller.py -d science.txt
 ```
+
+To view all the peps corresponding to every icommand issued -- run the following curl statement
+```
+
+curl -XGET 'localhost:9200/irods_audit/_search?pretty' -H 'Content-Type: application/json' -d'
+{
+    "sort" : [
+       {"@timestamp":{"order": "asc"}}
+    ],
+    "size" :10000,
+    "query": {
+        "match_all": {}
+    }
+}
+'
+```
