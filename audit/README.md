@@ -1,4 +1,3 @@
-To Set the Demo machine iRODS and audit plugin was installed. RabbitMQ, Elastic Search and Logstash were also installed.
 
 Ubuntu 16.04 LTS
 
@@ -44,7 +43,7 @@ sudo apt-get -y install erlang
 sudo apt-get -y install rabbitmq-server
 sudo rabbitmq-plugins enable rabbitmq_amqp1_0
 sudo rabbitmq-plugins enable rabbitmq_management
-sudo cp sc17/audit_rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
+sudo cp sc17/audit/rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
 sudo service rabbitmq-server start
 sudo rabbitmqctl add_user test test
 sudo rabbitmqctl set_user_tags test administrator
@@ -86,7 +85,7 @@ Install Logstash:
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 sudo apt-get update && sudo apt-get -y install logstash
-sudo cp sc17/irods_audit.conf /etc/logstash/conf.d/irods_audit.conf
+sudo cp sc17/audit/irods_audit.conf /etc/logstash/conf.d/irods_audit.conf
 sudo service logstash start
 ```
 
@@ -98,16 +97,15 @@ sudo -H pip install elasticsearch
 
 Run `audit_storyteller.py`:
 ```
-python sc17/audit_storyteller.py -d science.txt
+python sc17/audit/storyteller.py -d science.txt
 ```
 
-To view all the peps corresponding to every icommand issued -- run the following curl statement
+To view all the PEPs (rather than a subset) now stored in Elasticsearch:
 ```
-
 curl -XGET 'localhost:9200/irods_audit/_search?pretty' -H 'Content-Type: application/json' -d'
 {
     "sort" : [
-       {"@timestamp":{"order": "asc"}}
+        {"@timestamp":{"order": "asc"}}
     ],
     "size" :10000,
     "query": {
