@@ -1,5 +1,8 @@
-Two machines:
+Deploying this code:  https://github.com/irods-contrib/irods_tools_ingest
 
+Uses the PRC: 
+
+Two machines:
 ```
 # iRODS 4.2.2 Server
 rods/rods
