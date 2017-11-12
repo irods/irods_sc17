@@ -1,6 +1,6 @@
 Deploying this code:  https://github.com/irods-contrib/irods_tools_ingest
 
-Uses the PRC: 
+Uses the PRC: https://github.com/irods/python-irodsclient
 
 Two machines:
 ```
