@@ -48,6 +48,23 @@ Configure the middle tier query to detect policy violations:
 imeta set -R rnd1 irods::storage_tier_query "select META_DATA_ATTR_VALUE, DATA_NAME, COLL_NAME where RESC_NAME = 'ufs2' || = 'ufs3' and META_DATA_ATTR_NAME = 'irods::access_time' and META_DATA_ATTR_VALUE < 'TIME_CHECK_STRING'"
 ```
 
+View the storage tiering policy-defining metadata on the middle tier (`rnd1`):
+```
+$ imeta ls -R rnd1
+AVUs defined for resource rnd1:
+attribute: irods::storage_tier_group
+value: example_group
+units: 1
+----
+attribute: irods::storage_tier_time
+value: 60
+units: 
+----
+attribute: irods::storage_tier_query
+value: select META_DATA_ATTR_VALUE, DATA_NAME, COLL_NAME where RESC_NAME = 'ufs2' || = 'ufs3' and META_DATA_ATTR_NAME = 'irods::access_time' and META_DATA_ATTR_VALUE < 'TIME_CHECK_STRING'
+units: 
+```
+
 Teardown:
 ```
 iadmin rmchildfromresc rnd0 ufs0
