@@ -26,5 +26,15 @@ rq-dashboard
 ```
 View the dashboard at http://172.25.14.120:9181/
 
+To enqueue the files to be ingested:
+```
+irodsqueue ingest -Kf --timer data/3000_files/
+```
+
+To spawn the workers:
+```
+./workers.sh
+```
+
 `irodsqueue ingest` is 2-3x faster than `iput -r`
 
