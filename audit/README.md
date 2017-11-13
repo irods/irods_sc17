@@ -114,3 +114,8 @@ curl -XGET 'localhost:9200/irods_audit/_search?pretty' -H 'Content-Type: applica
 }
 '
 ```
+
+To delete all Elasticsearch data and start over:
+```
+curl -X DELETE 'http://localhost:9200/_all'
+```
