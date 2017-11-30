@@ -10,7 +10,7 @@ Prepare and clone this workshop repository:
 ```
 sudo apt-get update
 sudo apt-get -y install git python-pip moreutils jq
-git clone https://github.com/trel/sc17
+git clone https://github.com/irods/irods_sc17
 ```
 
 Install and configure iRODS 4.2.2:
@@ -97,7 +97,7 @@ sudo -H pip install elasticsearch
 
 Run `storyteller.py`:
 ```
-python sc17/audit/storyteller.py -d science.txt
+python irods_sc17/audit/storyteller.py -d science.txt
 ```
 
 To view all the PEPs (rather than a subset) now stored in Elasticsearch:
