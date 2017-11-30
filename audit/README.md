@@ -43,7 +43,7 @@ sudo apt-get -y install erlang
 sudo apt-get -y install rabbitmq-server
 sudo rabbitmq-plugins enable rabbitmq_amqp1_0
 sudo rabbitmq-plugins enable rabbitmq_management
-sudo cp sc17/audit/rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
+sudo cp irods_sc17/audit/rabbitmq.conf /etc/rabbitmq/rabbitmq.conf
 sudo service rabbitmq-server start
 sudo rabbitmqctl add_user test test
 sudo rabbitmqctl set_user_tags test administrator
@@ -85,7 +85,7 @@ Install Logstash:
 ```
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 sudo apt-get update && sudo apt-get -y install logstash
-sudo cp sc17/audit/irods_audit.conf /etc/logstash/conf.d/irods_audit.conf
+sudo cp irods_sc17/audit/irods_audit.conf /etc/logstash/conf.d/irods_audit.conf
 sudo service logstash start
 ```
 
