@@ -22,8 +22,8 @@ Denver, CO 80202
 
 ## Three Demonstrations
 
-- [Python Ingest Tool](ingest/)
+- [Python Ingest Tool](ingest/) ([watch](https://asciinema.org/a/UAVSeruEWvjF0218Y46nJcEG7))
 
-- [iRODS Rule and Metadata-Driven Storage Tiering](tiering/)
+- [iRODS Rule and Metadata-Driven Storage Tiering](tiering/) ([watch](https://asciinema.org/a/7wN4WCHxcS9FcqHRQJL7GNpmf))
 
-- [iRODS Audit (AMQP) Rule Engine Plugin](audit/)
+- [iRODS Audit (AMQP) Rule Engine Plugin](audit/) ([watch](https://asciinema.org/a/IdpEopItKq7JLcX9cAo7eUxsI))
